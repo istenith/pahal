@@ -1,3 +1,5 @@
+trap "kill 0" EXIT
+
 mkdir -p builds
 mkdir -p builds/pages
 mkdir -p builds/styles
@@ -11,3 +13,5 @@ pug -w ./index.pug --basedir ./ --out builds/ &
 pug -w pug/pages --basedir ./ --out builds/pages &
 less-watch-compiler &
 live-server ./builds &
+
+wait
