@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		link(rel="stylesheet" href="/views/styles/header.css")
+		block stylesheets
+	body
+		header
+			a#logo(href="https://istenith.me")
+				img(src="/resources/icons/ISTE.png")
+				span ISTE
+			input(type="checkbox" checked)
+			nav#menu
+				ul
+					- var options = [ "TODO", "Map", "Nearby", "Suggestions", "About Us" ]
+					each option in options
+						li
+							a #{option}
+		block content
