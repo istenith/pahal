@@ -1,17 +1,22 @@
 doctype html
 html
 	head
-		link(rel="stylesheet" href="../styles/header.css")
+		link(rel="stylesheet", type="text/css", href="/styles/header.min.css")
 		block headelms
 	body
 		header
-			a#logo(href="https://istenith.me")
-				img(src="/resources/images/logos/pngs/ISTE.png")
-				span ISTE
-			input(type="checkbox" checked)
-			nav#menu
+			.row
+				a#logo(href="https://istenith.me")
+					img(src="/resources/images/logos/pngs/ISTE.png")
+					span ISTE
+				button#menu-btn
+					span.icon &#xf0c9;
+					span.text menu
+			nav#menu.off-screen
+				.txt-right
+					span.icon &#xe801;
 				ul
-					- var options = [ "TODO", "Map", "Nearby", "Suggestions", "About Us" ]
+					- var options = [ "Home", "Map", "Nearby", "Feedback", "About Us" ]
 					each option in options
 						li
 							a #{option}
