@@ -1,5 +1,13 @@
-extends ./pug/bases/header.pug
+extends /pug/bases/header.pug
+
+block headelms
+	link(rel="stylesheet", type="text/css", href="styles/index.min.css")
 
 block content
-	section#about
-		.section-title About
+	section#todo
+		- var todos = ["step1", "step2", "step3", "step4"];
+		each todo, index in todos
+			.card.row
+				input(type="checkbox")
+				.number= index+1
+				.info #{todo}
