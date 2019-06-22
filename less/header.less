@@ -1,0 +1,92 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: all 0.25s ease-in-out;
+}
+@import (reference) 'library.less';
+.row {
+	display: flex;
+	align-items: center;
+}
+@font-face {
+	font-family: 'Icon';
+	src: url(/resources/fonts/icon.ttf);
+}
+.icon {
+	font-family: 'Icon';
+	font-weight: 400 !important;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+header {
+	.upper();	
+	.fw5();
+	.white-bg();
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	.row {
+		font-size: 21px;
+		width: 100%;
+		padding: 1em;
+		padding-right: 0;
+		justify-content: space-between;
+		#logo {
+			.row();
+			img {
+				width: 48px;
+			}
+			text-decoration: none;
+			span {
+				.fw7();
+				padding-left: 0.5em;
+				color: @iste-blue;
+			}
+		}
+		#menu-btn {
+			.btn-padding();
+			.pointer();
+			color: @iste-blue;
+		}
+	}
+	#menu{
+		.white-bg();
+		position: fixed;
+		height: 100vh;
+		top: 0;
+		right: 0;
+
+		z-index: 9;
+		color: grey;
+		padding: 1.5em;
+		box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0 -6px 6px rgba(0, 0, 0, 0.23);
+		#close-menu {
+			.txt-center();
+			.pointer();
+			font-family: sans-serif;
+			padding: 0.5em;
+			font-size: 32px;
+		}
+		ul {
+			list-style: none;
+			li a {
+				display: block;
+				padding: 1em 1.5em;
+				border-bottom: 2px  solid grey;
+				min-width: 210px;
+			}
+			li:last-child a {
+				border: none;
+			}
+		}
+	}
+	#menu.off-screen {
+		transform: translateX(111%);
+		.icon:first-child {
+			transform: rotate(90deg);
+		}
+	}
+}

@@ -1,18 +1,35 @@
 doctype html
 html
 	head
-		link(rel="stylesheet" href="../styles/header.css")
+		link(rel="stylesheet", type="text/css", href="/styles/header.min.css")
 		block headelms
 	body
 		header
-			a#logo(href="https://istenith.me")
-				img(src="/resources/images/logos/pngs/ISTE.png")
-				span ISTE
-			input(type="checkbox" checked)
-			nav#menu
+			.row
+				a#logo(href="https://istenith.me")
+					img(src="/resources/images/logos/pngs/ISTE.png")
+					span ISTE
+				a#menu-btn
+					span.icon &#x2261;
+			nav#menu.off-screen
 				ul
-					- var options = [ "TODO", "Map", "Nearby", "Suggestions", "About Us" ]
+					- var options = [ "Home", "Map", "Nearby", "Feedback", "About Us" ]
 					each option in options
 						li
 							a #{option}
+				#close-menu &#x00d7;
+
 		block content
+		script(type="text/javascript").
+			var menuBtn = document.getElementById('menu-btn');
+			console.log(menuBtn);
+			menuBtn.onclick = function(eve) {
+				console.log("Here");
+				document.getElementById('menu').classList.remove('off-screen');
+			};
+
+			var closeMenuBtn = document.getElementById('close-menu');
+			console.log(closeMenuBtn);
+			closeMenuBtn.onclick = function(eve) {
+				document.getElementById('menu').classList.add('off-screen');
+			};
