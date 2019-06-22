@@ -1,12 +1,69 @@
+@import (reference) 'library.less';
 body {
 	background: #e0e0e0;
 }
 #todo {
 	.card {
+		position: relative;
 		background: #fff;
 		margin: 0.5em;
 		border-radius: 0.3em;
 		padding: 1em;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		input {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			opacity: 0;
+			right: 0;
+			width: 19%;
+		}
+		.row {
+			pointer-events: none;
+			.expand {
+				position: absolute;
+				top: 1.5em;
+				right: 1.5em;
+			}
+			.number {
+				.fw7();
+				.btn-padding();
+				.circle-radius();
+				color: #fff;
+				background: @iste-blue;
+				transition: none;
+			}
+			.title {
+				padding-left: 1em;
+				transition: none;
+			}
+			.desc {
+				padding-top: 0;
+				max-height: 0px;
+				overflow: hidden;
+				color: grey;
+			}
+		}
+		input.desc:checked {
+			&~.row .expand {
+				transform: rotate(180deg);
+			}
+			&~.row .desc {
+				max-height: 66px;
+				padding-top: 0.5em;
+				margin-top: 0.5em;
+				border-top: 2px dashed gray;
+			}
+		}
+	}
+	.card.completed {
+		.number {
+			background: @cool-green;
+		}
+		.title {
+			text-decoration: line-through;
+			font-style: italic;
+			color: grey;
+		}
 	}
 }

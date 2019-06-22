@@ -5,9 +5,37 @@ block headelms
 
 block content
 	section#todo
-		- var todos = ["step1", "step2", "step3", "step4"];
+		-
+			var todos = [
+				{
+					'title':'Take forms from counter',
+					'desc':'Take forms, fill them and arrange in documents in order'
+				},
+				{
+					'title':'Take forms from counter',
+					'desc':'Take forms, fill them and arrange in documents in order'
+				},
+				{
+					'title':'Take forms from counter',
+					'desc':'Take forms, fill them and arrange in documents in order'
+				}
+			]
 		each todo, index in todos
-			.card.row
-				input(type="checkbox")
-				.number= index+1
-				.info #{todo}
+			.card
+				if todo.desc
+					input(type="checkbox").desc
+				.row
+					span.number= index+1
+					span.title= todo.title
+				.row
+					if todo.desc
+						span.expand.icon &#x21af;
+						.desc= todo.desc
+	script(type="text/javascript").
+		var todoCards = document.getElementById('todo').getElementsByClassName('card');
+		for(var i = 0; i < todoCards.length; ++i) {
+			todoCards[i].onclick = function(eve) {
+				eve.target.classList.toggle('completed');
+			};
+		}
+
