@@ -9,8 +9,7 @@ html
 				a#logo(href="https://istenith.me")
 					img(src="/resources/images/logos/pngs/ISTE.png")
 					span ISTE
-				a#menu-btn
-					span.icon &#x2261;
+				#menu-btn.icon &#x2261;
 			nav#menu.off-screen
 				ul
 					- var options = [ "Home", "Map", "Nearby", "Feedback", "About Us" ]
@@ -22,14 +21,11 @@ html
 		block content
 		script(type="text/javascript").
 			var menuBtn = document.getElementById('menu-btn');
-			console.log(menuBtn);
 			menuBtn.onclick = function(eve) {
-				console.log("Here");
 				document.getElementById('menu').classList.remove('off-screen');
 			};
 
 			var closeMenuBtn = document.getElementById('close-menu');
-			console.log(closeMenuBtn);
 			closeMenuBtn.onclick = function(eve) {
 				document.getElementById('menu').classList.add('off-screen');
 			};

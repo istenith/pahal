@@ -31,11 +31,4 @@ block content
 					if todo.desc
 						span.expand.icon &#x21af;
 						.desc= todo.desc
-	script(type="text/javascript").
-		var todoCards = document.getElementById('todo').getElementsByClassName('card');
-		for(var i = 0; i < todoCards.length; ++i) {
-			todoCards[i].onclick = function(eve) {
-				eve.target.classList.toggle('completed');
-			};
-		}
-
+	script(type="text/javascript" src="scripts/index.js")
