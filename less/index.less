@@ -2,14 +2,23 @@
 body {
 	background: #e0e0e0;
 }
+.section-title {
+	.upper();
+	.fw7();
+	.txt-center();
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	font-size: 24px;
+	color: #555;
+}
 #todo {
 	.card {
+		.small-shadow();
 		position: relative;
 		background: #fff;
 		margin: 0.5em;
 		border-radius: 0.3em;
 		padding: 1em;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		input {
 			position: absolute;
 			top: 0;
@@ -35,6 +44,7 @@ body {
 			}
 			.title {
 				padding-left: 1em;
+				padding-right: 5em;
 				transition: none;
 			}
 			.desc {

@@ -1,26 +1,52 @@
 doctype html
 html
 	head
-		link(rel="stylesheet", type="text/css", href="/styles/header.min.css")
+		link(rel='stylesheet', type='text/css', href='/styles/header.min.css')
 		block headelms
 	body
 		header
 			.row
-				a#logo(href="https://istenith.me")
-					img(src="/resources/images/logos/pngs/ISTE.png")
+				a#logo(href='https://istenith.me')
+					img(src='/resources/images/logos/pngs/ISTE.png')
 					span ISTE
 				#menu-btn.icon &#x2261;
 
 			nav#menu.off-screen
 				ul
-					- var options = [ "Home", "Map", "Nearby", "Feedback", "About Us" ]
+					-
+						var options = [
+							{
+								'text':'Home',
+								'link':'/'
+							},
+							{
+								'text':'Map',
+								'link':'#'
+							},
+							{
+								'text':'FAQ',
+								'link':'/pages/faq.html'
+							},
+							{
+								'text':'Feedback',
+								'link':'/pages/feedback.html'
+							},
+							{
+								'text':'About Us',
+								'link':'https://istenith.github.io/'
+							}
+						];
 					each option in options
 						li
-							a #{option}
+							a(href=option.link) #{option.text}
 				#close-menu &#x00d7;
+		#filler
 
 		block content
-		script(type="text/javascript").
+		script(type='text/javascript').
+			document.getElementById('filler').style.height = 
+			(document.getElementsByTagName('header')[0].offsetHeight + 6) + 'px';
+
 			var menuBtn = document.getElementById('menu-btn');
 			menuBtn.onclick = function(eve) {
 				document.getElementById('menu').classList.remove('off-screen');

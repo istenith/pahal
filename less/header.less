@@ -6,6 +6,9 @@
 	padding: 0;
 	transition: all 0.25s ease-in-out;
 }
+a {
+	text-decoration: none;
+}
 @import (reference) 'library.less';
 .row {
 	display: flex;
@@ -19,6 +22,7 @@
 	font-family: 'Icon';
 	font-weight: 400 !important;
 }
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap');
 body {
 	font-family: 'Montserrat', sans-serif;
 }
@@ -27,7 +31,12 @@ header {
 	.upper();	
 	.fw5();
 	.white-bg();
-	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	.large-shadow();
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	z-index: 7;
 	.row {
 		font-size: 21px;
 		width: 100%;
@@ -37,9 +46,8 @@ header {
 		#logo {
 			.row();
 			img {
-				width: 48px;
+				width: 36px;
 			}
-			text-decoration: none;
 			span {
 				.fw7();
 				padding-left: 0.5em;
@@ -54,6 +62,7 @@ header {
 	}
 	#menu{
 		.white-bg();
+		.large-shadow-left();
 		position: fixed;
 		height: 100vh;
 		top: 0;
@@ -62,7 +71,6 @@ header {
 		z-index: 9;
 		color: grey;
 		padding: 1.5em;
-		box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0 -6px 6px rgba(0, 0, 0, 0.23);
 		#close-menu {
 			.txt-center();
 			.pointer();
@@ -77,6 +85,7 @@ header {
 				padding: 1em 1.5em;
 				border-bottom: 2px  solid grey;
 				min-width: 210px;
+				color: grey;
 			}
 			li:last-child a {
 				border: none;
@@ -84,7 +93,8 @@ header {
 		}
 	}
 	#menu.off-screen {
-		transform: translateX(111%);
+		transform: translateX(100%);
+		box-shadow: none;
 		.icon:first-child {
 			transform: rotate(90deg);
 		}
