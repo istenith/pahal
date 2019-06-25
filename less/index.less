@@ -1,0 +1,63 @@
+@import (reference) 'library.less';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: all 0.25s ease-in-out;
+}
+a {
+	text-decoration: none;
+}
+
+#banner {
+    color: white;
+    width: 100%;
+    padding: 10vh 5vw;
+    font-size: 1.5rem;
+    background: url(../resources/images/college_backg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    h1 {
+        letter-spacing: 10px;
+    }
+    .shadow {
+        width: 100%;
+        background: rgba(0,0,0,0.5);
+        padding: 10px 0px;
+    }
+}
+
+.link-grid {
+    width: fit-content;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 175px 175px;
+    grid-template-rows: 175px 175px 175px;
+    grid-gap: 20px 20px;
+    .link-circle {
+        line-height: 175px;
+        vertical-align: middle;
+        text-align: center;
+        border-radius: 333px;
+        min-height: 175px;
+        background: @iste-blue;
+    }
+}
+
+.link-circle:nth-of-type(even) {
+    margin-top: 50px;
+}
+
+@media screen and (min-width: 700px) {
+    .link-grid {
+        grid-template-columns: 175px 175px 175px 175px 175px;
+        grid-template-rows: 175px;
+        grid-column-gap: 20px;
+        .link-circle {
+            margin: 0;
+        }
+    }
+}

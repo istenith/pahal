@@ -4,3 +4,14 @@ block headelms
 	link(rel="stylesheet", type="text/css", href="styles/index.min.css")
 
 block content
+	section#banner
+		div.shadow
+			h1 PAHAL
+			p An initiative by ISTE, NIT Hamirpur
+	-
+		var links = ["TODO","MAP","FAQ","FEEDBACK","ABOUT US"];
+	
+	.link-grid
+		each link in links
+			.link-circle
+				span.title= link
