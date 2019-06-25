@@ -1,0 +1,41 @@
+extends /pug/bases/header.pug
+block headelms
+	link(rel="stylesheet", type="text/css", href="/styles/todo.min.css")
+
+block content
+	section#todo
+		.section-title TODO
+		.card Click the tasks below as they are completed to check them off.
+			br
+			br
+			| Click the arrow to get more information about the task.
+			br
+			br
+			| We will remeber your progress even if you exit.
+			
+		-
+			var todos = [
+				{
+					'title':'Take forms from counter',
+					'desc':'Take forms, fill them and arrange in documents in order'
+				},
+				{
+					'title':'Take forms from counter',
+					'desc':'Take forms, fill them and arrange in documents in order'
+				},
+				{
+					'title':'Take forms from counter',
+					'desc':'Take forms, fill them and arrange in documents in order'
+				}
+			]
+		each todo, index in todos
+			.card
+				.row
+					span.number= index+1
+					span.title= todo.title
+				.row
+					if todo.desc
+						input.expand(type="checkbox")
+						.expand.icon &#x21af;
+						.desc= todo.desc
+	script(type="text/javascript" src="scripts/todo.js")
