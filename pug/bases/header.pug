@@ -2,6 +2,7 @@ doctype html
 html
 	head
 		link(rel='stylesheet', type='text/css', href='/styles/header.min.css')
+		link(rel="stylesheet" href="/styles/commons.min.css" type="text/css")
 		block headelms
 	body
 		header
@@ -38,7 +39,7 @@ html
 						];
 					each option in options
 						li
-							a(href=option.link) #{option.text}
+							a(href=option.link target="blank") #{option.text}
 				#close-menu &#x00d7;
 		#filler
 

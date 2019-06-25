@@ -19,17 +19,17 @@ a {
 	src: url(/resources/fonts/icon.ttf);
 }
 .icon {
-	font-family: 'Icon';
+	font-family: 'Icon' !important;
 	font-weight: 400 !important;
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap');
 body {
 	font-family: 'Montserrat', sans-serif;
+	background: #e0e0e0;
 }
 
 header {
 	.upper();	
-	.fw5();
 	.white-bg();
 	.large-shadow();
 	position: fixed;
@@ -62,12 +62,12 @@ header {
 	}
 	#menu{
 		.white-bg();
-		.large-shadow-left();
+		.large-shadow();
 		position: fixed;
-		height: 100vh;
 		top: 0;
 		right: 0;
 
+		height: 100vh;
 		z-index: 9;
 		color: grey;
 		padding: 1.5em;
@@ -86,6 +86,7 @@ header {
 				border-bottom: 2px  solid grey;
 				min-width: 210px;
 				color: grey;
+				.fw6();
 			}
 			li:last-child a {
 				border: none;

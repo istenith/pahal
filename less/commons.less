@@ -1,0 +1,60 @@
+@import (reference) 'library.less';
+input.expand {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 4.2em;
+	width: 3.6em;
+	opacity: 0;
+	z-index: 3;
+}
+.expand.icon {
+	position: absolute;
+	top: 1.5em;
+	right: 1.5em;
+	pointer-events: none;
+}
+.title {
+	.fw6();
+	padding-left: 0.5em;
+	padding-right: 2.4em;
+	transition: none;
+	color: #333;
+}
+.desc {
+	padding-top: 0;
+	max-height: 0px;
+	overflow: hidden;
+	width: 100%;
+}
+input.expand:checked {
+	&~span.expand {
+		transform: rotate(180deg);
+	}
+	&~.desc {
+		max-height: 150px;
+		padding-top: 0.5em;
+		margin-top: 0.5em;
+		border-top: 2px dashed gray;
+	}
+}
+.section-title,
+.card {
+	.small-shadow();
+}
+.section-title {
+	.upper();
+	.fw7();
+	.txt-center();
+	font-size: 2rem;
+	padding: 0.6em;
+	color: #fff;
+	background: @iste-blue;
+}
+.card {
+	position: relative;
+	background: #fff;
+	margin: 0.5em;
+	border-radius: 0.3em;
+	padding: 1em;
+}

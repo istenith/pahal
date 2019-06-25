@@ -1,0 +1,20 @@
+@import (reference) 'library.less';
+form {
+	input:not(#send), textarea {
+		.white-bg();
+		color: #333;
+		width: 100%;
+		border: 2px solid @iste-blue;
+		border-radius: 0.3em;
+		font-size: 21px;
+		margin: 0.25em 0;
+		padding: 0.25em 1em;
+		box-shadow: inset 0 0 0.14em rgba(0, 0, 0, 0.16), inset 0 0 0.14em rgba(0, 0, 0, 0.23);
+	}
+}
+#send {
+	background: @iste-blue;
+	color: #fff;
+	width: unset;
+	box-shadow: none;
+}

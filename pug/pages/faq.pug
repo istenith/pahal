@@ -1,0 +1,27 @@
+extends /pug/bases/header.pug
+
+block headelms
+	link(rel="stylesheet" href="/styles/faq.min.css" type="text/css")
+
+block content
+	section#faq
+		.section-title FAQ
+		.card
+			b Data provided should not be assumed as official.
+		-
+			var faqs = [
+				{
+					"ques":"Are all documents necessary at the time of admission",
+					"ans" :"..."
+				/*	"No, <b>only id proofs are required</b> (ID, JoSAA letter, are must), other documents can be submitted till 15<sup>th</sup> September, 2019.",*/
+				},
+			]
+		each faq in faqs
+			.card
+				.row
+					.title Q. #{faq.ques}?
+				.row
+					if faq.ans
+						input(type="checkbox").expand
+						.expand.icon &#x21af;
+						.desc!= faq.ans

@@ -1,69 +1,17 @@
 @import (reference) 'library.less';
-body {
-	background: #e0e0e0;
-}
-.section-title {
-	.upper();
-	.fw7();
-	.txt-center();
-	padding-top: 1em;
-	padding-bottom: 0.5em;
-	font-size: 24px;
-	color: #555;
-}
 #todo {
-	.card {
-		.small-shadow();
-		position: relative;
-		background: #fff;
-		margin: 0.5em;
-		border-radius: 0.3em;
-		padding: 1em;
+	.row {
+		pointer-events: none;
 		input {
-			position: absolute;
-			top: 0;
-			height: 4.2em;
-			opacity: 0;
-			right: 0;
-			width: 3.6em;
+			pointer-events: all;
 		}
-		.row {
-			pointer-events: none;
-			.expand {
-				position: absolute;
-				top: 1.5em;
-				right: 1.5em;
-			}
-			.number {
-				.fw7();
-				.btn-padding();
-				.circle-radius();
-				color: #fff;
-				background: @iste-blue;
-				transition: none;
-			}
-			.title {
-				padding-left: 1em;
-				padding-right: 5em;
-				transition: none;
-			}
-			.desc {
-				padding-top: 0;
-				max-height: 0px;
-				overflow: hidden;
-				color: grey;
-			}
-		}
-		input.desc:checked {
-			&~.row .expand {
-				transform: rotate(180deg);
-			}
-			&~.row .desc {
-				max-height: 66px;
-				padding-top: 0.5em;
-				margin-top: 0.5em;
-				border-top: 2px dashed gray;
-			}
+		.number {
+			.fw7();
+			.btn-padding();
+			.circle-radius();
+			color: #fff;
+			background: @iste-blue;
+			transition: none;
 		}
 	}
 	.card.completed {
