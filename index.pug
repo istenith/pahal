@@ -2,6 +2,7 @@ extends /pug/bases/header.pug
 
 block headelms
 	link(rel="stylesheet", type="text/css", href="styles/index.min.css")
+	link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css")
 
 block content
 	section#banner
@@ -9,9 +10,17 @@ block content
 			h1 PAHAL
 			p An initiative by ISTE, NIT Hamirpur
 	-
-		var links = ["TODO","MAP","FAQ","FEEDBACK","ABOUT US"];
-	
+		var buttons = [
+			{"title":"TODO","icon":"fas fa-list","link":"/pages/todo.html"},
+			{"title":"MAP","icon":"fas fa-map-marked","link":"#"},
+			{"title":"FAQ","icon":"fas fa-question-circle","link":"/pages/faq.html"},
+			{"title":"FEEDBACK","icon":"fas fa-comments","link":"/pages/feedback.html"},
+			{"title":"ABOUT US","icon":"fas fa-user-friends","link":"https://istenith.github.io/"}
+		]
+		
 	.link-grid
-		each link in links
-			.link-circle
-				span.title= link
+		each button in buttons
+			a(class="link-square",href=button.link)
+				div.title= button.title
+				i(class=button.icon)
+				

@@ -9,7 +9,7 @@
 	transition: all 0.25s ease-in-out;
 }
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 #banner {
@@ -32,31 +32,37 @@ a {
 
 .link-grid {
     width: fit-content;
-    margin: 20px auto;
+    margin: 40px auto;
     display: grid;
-    grid-template-columns: 175px 175px;
-    grid-template-rows: 175px 175px 175px;
-    grid-gap: 20px 20px;
-    .link-circle {
-        line-height: 175px;
-        vertical-align: middle;
-        text-align: center;
-        border-radius: 333px;
-        min-height: 175px;
-        background: @iste-blue;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    grid-gap: 30px 30px;
+    .link-square {
+        .small-shadow();
+        background: rgba(255,255,255,0.08);
+        * {
+            margin: 20px auto;
+            width: fit-content;
+            padding: 0;
+            color: white;
+        }
+        i {
+            margin-top: 40px;
+            font-size: 3em;
+            display: block;
+        }
+    }
+    .link-square:hover {
+        background:rgba(255,255,255,0.16);
     }
 }
 
-.link-circle:nth-of-type(even) {
-    margin-top: 50px;
-}
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000) {
     .link-grid {
-        grid-template-columns: 175px 175px 175px 175px 175px;
-        grid-template-rows: 175px;
+        grid-template-columns: 150px 150px 150px 150px 150px;
+        grid-template-rows: 150px;
         grid-column-gap: 20px;
-        .link-circle {
+        .link-square {
             margin: 0;
         }
     }
