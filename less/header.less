@@ -15,23 +15,28 @@ a {
 	align-items: center;
 }
 @font-face {
-	font-family: 'Icon';
-	src: url(/resources/fonts/icon.ttf);
+	font-family: 'Iconic';
+	src: 
+	url(/resources/fonts/iconic.woff2) format('woff2'),
+	url(/resources/fonts/iconic.woff) format('woff'),
+	url(/resources/fonts/iconic.ttf) format('truetype'),
+	url(/resources/fonts/iconic.svg) format('svg'),
+	url(/resources/fonts/iconic.eot) format('embedded-opentype');
+	unicode-range: U+a00?;
 }
 .icon {
-	font-family: 'Icon' !important;
+	font-family: 'Iconic' !important;
 	font-weight: 400 !important;
 }
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap');
 body {
 	font-family: 'Montserrat', sans-serif;
-	background: #121212;
+	.pri-bg();
 }
 
 header {
 	.upper();	
-	// .white-bg();
-	.dark-bg();
+	.card-bg();
 	.large-shadow();
 	position: fixed;
 	top: 0;
@@ -61,8 +66,73 @@ header {
 			color: @iste-blue;
 		}
 	}
+	.bottom {
+		.pri-text();
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 1em;
+	}
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 60px;
+		height: 34px;
+		overflow: hidden;
+
+		/* Hide default HTML checkbox */
+		input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		/* The slider */
+		.slider {
+			background: grey;
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: white;
+		}
+
+		input:checked + .slider {
+			background-color: @iste-blue;
+		}
+
+		input:checked + .slider:before {
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+		border-radius: 34px;
+		}
+
+		.slider.round:before {
+		border-radius: 50%;
+		}
+	}
 	#menu{
-		.white-bg();
+		.card-bg();
 		.large-shadow();
 		position: fixed;
 		top: 0;
@@ -70,11 +140,11 @@ header {
 
 		height: 100vh;
 		z-index: 9;
-		color: grey;
 		padding: 1.5em;
 		#close-menu {
 			.txt-center();
 			.pointer();
+			color: var(--white-grey);
 			font-family: sans-serif;
 			padding: 0.5em;
 			font-size: 32px;
@@ -82,12 +152,12 @@ header {
 		ul {
 			list-style: none;
 			li a {
+				.fw6();
 				display: block;
 				padding: 1em 1.5em;
-				border-bottom: 2px  solid grey;
+				border-bottom: 2px  solid var( --white-grey );
+				color: var(--white-grey);
 				min-width: 210px;
-				color: grey;
-				.fw6();
 			}
 			li:last-child a {
 				border: none;

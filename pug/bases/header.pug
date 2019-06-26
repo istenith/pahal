@@ -3,6 +3,7 @@ html
 	head
 		link(rel='stylesheet', type='text/css', href='/styles/header.min.css')
 		link(rel="stylesheet" href="/styles/commons.min.css" type="text/css")
+		link(rel='preload' as='font')
 		block headelms
 	body
 		header
@@ -10,7 +11,8 @@ html
 				a#logo(href='https://istenith.me')
 					img(src='/resources/images/logos/pngs/ISTE.png')
 					span ISTE
-				#menu-btn.icon &#x2261;
+
+				#menu-btn.icon &#xa001;
 
 			nav#menu.off-screen
 				ul
@@ -45,19 +47,15 @@ html
 						li
 							a(href=option.link target="blank") #{option.text}
 				#close-menu &#x00d7;
+				.bottom
+					b 
+						span.icon &#xa005;
+						| Dark mode
+					label#color-mode-switch.switch
+						input(type='checkbox' checked)
+						span.slider.round
+
 		#filler
 
 		block content
-		script(type='text/javascript').
-			document.getElementById('filler').style.height = 
-			(document.getElementsByTagName('header')[0].offsetHeight + 6) + 'px';
-
-			var menuBtn = document.getElementById('menu-btn');
-			menuBtn.onclick = function(eve) {
-				document.getElementById('menu').classList.remove('off-screen');
-			};
-
-			var closeMenuBtn = document.getElementById('close-menu');
-			closeMenuBtn.onclick = function(eve) {
-				document.getElementById('menu').classList.add('off-screen');
-			};
+		script(type='text/javascript' src='/scripts/header.js').

@@ -1,4 +1,26 @@
 @import (reference) 'library.less';
+:root {
+	--pri-text: #fff;
+	--sec-text: darken(#fff,30%);
+	--ter-text: darken(#fff, 50%);
+
+	--nav-bg: #212121;
+	--pri-bg: #303030;
+	--card-bg: #424242;
+	--white-grey: darken(#fff,21%);
+}
+
+[data-theme="light"] {
+	--pri-text: #333;
+	--sec-text: lighten(#333,70%);
+	--ter-text: lighten(#333, 50%);
+
+	--nav-bg: #fff;
+	--pri-bg: #e0e0e0;
+	--card-bg: #fff;
+
+	--white-grey: grey;
+}
 input.expand {
 	position: absolute;
 	top: 0;
@@ -19,7 +41,7 @@ input.expand {
 	padding-left: 0.5em;
 	padding-right: 2.4em;
 	transition: none;
-	color: #333;
+	color: var( --pri-text );
 }
 .desc {
 	padding-top: 0;
@@ -28,14 +50,15 @@ input.expand {
 	width: 100%;
 }
 input.expand:checked {
-	&~span.expand {
+	&~.expand {
 		transform: rotate(180deg);
 	}
 	&~.desc {
+		.pri-text();
 		max-height: 150px;
 		padding-top: 0.5em;
 		margin-top: 0.5em;
-		border-top: 2px dashed gray;
+		border-top: 2px dashed var( --ter-text );
 	}
 }
 .section-title,
@@ -52,9 +75,11 @@ input.expand:checked {
 	background: @iste-blue;
 }
 .card {
+	.card-bg();
+	.pri-text();
 	position: relative;
-	background: #fff;
 	margin: 0.5em;
 	border-radius: 0.3em;
 	padding: 1em;
+
 }
