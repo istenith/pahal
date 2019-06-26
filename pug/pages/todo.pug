@@ -4,7 +4,7 @@ block headelms
 
 block content
 	section#todo
-		.section-title TODO
+		.section-title Documents Required
 		.card Click the tasks below as they are completed to check them off.
 			br
 			br
@@ -12,20 +12,63 @@ block content
 			br
 			br
 			| We will remeber your progress even if you exit.
+			br
+			br 
+			| Below is the list of documents required for admission through JOSAA
 			
 		-
 			var todos = [
 				{
-					'title':'Take forms from counter',
+					'title':'Provisional JoSAA Seat Allotment Letter 2019',
 					'desc':'Take forms, fill them and arrange in documents in order'
 				},
 				{
-					'title':'Take forms from counter',
-					'desc':'Take forms, fill them and arrange in documents in order'
+					'title':'Passport size photographs',
+					'desc':'Three passport size photographs similar to one uploaded in JEE Main 2019 application form'
 				},
 				{
-					'title':'Take forms from counter',
-					'desc':'Take forms, fill them and arrange in documents in order'
+					'title':'Candidate Undertaking',
+					'desc':'Download from official JoSAA 2019 portal'
+				},
+				{
+					'title':'JEE Main Score Card 2019',
+					'desc':'Download from the official results of JEE Main'
+				},
+				{
+					'title':'JEE Main Admit Card 2019',
+					'desc':'Download and get a hard copy of it'
+				},
+				{
+					'title':'Class 10th Marksheet',
+					'desc':'Class 10th Standard Mark Sheet or Date of Birth Proof'
+				},
+				{
+					'title':'Class 12th Marksheet',
+					'desc':'Class 12 (or equivalent) Mark Sheet and Pass Certificate'
+				},
+				{
+					'title':'Valid photo Identity Card',
+					'desc':'Aadhar card is preferred'
+				},
+				{
+					'title':'Medical Certificate',
+					'desc':'Get it from any government medical center or from the college dispensary'
+				},
+				{
+					'title':'Category Certificate',
+					'desc':'If applicable'
+				},
+				{
+					'title':'PwD Certificate',
+					'desc':'If applicable'
+				},
+				{
+					'title':'OCI Certificate or PIO Card',
+					'desc':'If applicable'
+				},
+				{
+					'title':'Registration and Filled Choices for Seat Allotment',
+					'desc':'Download from official JoSAA 2019 portal'
 				}
 			]
 		each todo, index in todos
@@ -38,4 +81,4 @@ block content
 						input.expand(type="checkbox")
 						.expand.icon &#x21af;
 						.desc= todo.desc
-	script(type="text/javascript" src="/scripts/todo.js")
+	script(type="text/javascript" src="../scripts/todo.js")
