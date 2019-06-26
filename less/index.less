@@ -27,12 +27,13 @@
     grid-gap: 30px 30px;
     .link-square {
         .small-shadow();
-        background: rgba(255,255,255,0.08);
+		.card-bg();
+		.txt-center();
         * {
+			.pri-text();
             margin: 20px auto;
             width: fit-content;
             padding: 0;
-            color: white;
         }
         i {
             margin-top: 40px;
@@ -41,7 +42,7 @@
         }
     }
     .link-square:hover {
-        background:rgba(255,255,255,0.16);
+		.large-shadow();
     }
 }
 

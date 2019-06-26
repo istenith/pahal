@@ -3,7 +3,7 @@ html
 	head
 		link(rel='stylesheet', type='text/css', href='/styles/header.min.css')
 		link(rel="stylesheet" href="/styles/commons.min.css" type="text/css")
-		link(rel='preload' as='font')
+		link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css")
 		block headelms
 	body
 		header
@@ -12,7 +12,7 @@ html
 					img(src='/resources/images/logos/pngs/ISTE.png')
 					span ISTE
 
-				#menu-btn.icon &#xa001;
+				#menu-btn.fas.fa-bars
 
 			nav#menu.off-screen
 				ul
@@ -40,16 +40,21 @@ html
 							},
 							{
 								'text':'About Us',
-								'link':'https://istenith.github.io/'
+								'link':'https://istenith.github.io/',
+								'target': 'blank'
 							}
 						];
 					each option in options
 						li
-							a(href=option.link target="blank") #{option.text}
+							if option.target
+								a(href=option.link target=option.target) #{option.text}
+							else
+								a(href=option.link) #{option.text}
+
 				#close-menu &#x00d7;
 				.bottom
 					b 
-						span.icon &#xa005;
+						span.fas.fa-sun
 						| Dark mode
 					label#color-mode-switch.switch
 						input(type='checkbox' checked)

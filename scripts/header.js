@@ -37,9 +37,13 @@ function implementColorMode() {
 }
 
 function updateColorModeSwitch() {
-  if (mode == 'light' && colorModeSwitch.checked) {
-    colorModeSwitch.click();
-  } else if (mode == 'dark' && !colorModeSwitch.checked) {
-    colorModeSwitch.click();
+  if (mode == 'light') {
+    if (colorModeSwitch.getElementsByTagName('input')[0].checked) {
+      colorModeSwitch.click();
+    }
+  } else if (mode == 'dark') {
+    if (colorModeSwitch.getElementsByTagName('input')[0].checked == false) {
+      colorModeSwitch.click();
+    }
   }
 }

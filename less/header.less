@@ -14,7 +14,7 @@ a {
 	display: flex;
 	align-items: center;
 }
-@font-face {
+/*@font-face {
 	font-family: 'Iconic';
 	src: 
 	url(/resources/fonts/iconic.woff2) format('woff2'),
@@ -27,7 +27,7 @@ a {
 .icon {
 	font-family: 'Iconic' !important;
 	font-weight: 400 !important;
-}
+}*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700&display=swap');
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -68,14 +68,20 @@ header {
 	}
 	.bottom {
 		.pri-text();
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 		position: absolute;
 		left: 0;
 		bottom: 0;
 		width: 100%;
 		padding: 1em;
+		&, b{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		span {
+			font-size: 1.5em;
+			padding-right: 0.25em;
+		}
 	}
 	.switch {
 		position: relative;
