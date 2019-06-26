@@ -27,6 +27,10 @@ html
 								'link':'/pages/todo.html'
 							},
 							{
+								'text':'Docs Required',
+								'link':'/pages/docreq.html'
+							},
+							{
 								'text':'Map',
 								'link':'#'
 							},
@@ -47,9 +51,9 @@ html
 					each option in options
 						li
 							if option.target
-								a(href=option.link target=option.target) #{option.text}
+								a(href=option.link target=option.target)!= option.text
 							else
-								a(href=option.link) #{option.text}
+								a(href=option.link)!= option.text
 
 				#close-menu &#x00d7;
 				.bottom

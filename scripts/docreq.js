@@ -1,4 +1,4 @@
-var completedTasks = localStorage.getItem('todoCompletedTasks');
+var completedTasks = localStorage.getItem('docreqCompletedTasks');
 
 if (completedTasks != '' && completedTasks != null) {
   completedTasks = completedTasks.split(',').map(function(x) {
@@ -8,7 +8,8 @@ if (completedTasks != '' && completedTasks != null) {
   completedTasks = [];
 }
 
-var todoCards = document.getElementById('todo').getElementsByClassName('card');
+var todoCards =
+    document.getElementById('docreq').getElementsByClassName('card');
 
 for (var i = 0; i < completedTasks.length; ++i) {
   todoCards[completedTasks[i]].classList.add('completed');
@@ -21,7 +22,7 @@ for (var todoCard = 0; todoCard < todoCards.length; ++todoCard) {
     eve.target.classList.toggle('completed');
     toggleValueInArray(completedTasks, eve.target.Index);
 
-    localStorage.setItem('todoCompletedTasks', completedTasks.toString());
+    localStorage.setItem('docreqCompletedTasks', completedTasks.toString());
   };
 }
 
