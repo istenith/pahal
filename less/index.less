@@ -49,3 +49,25 @@
 		}
     }
 }
+
+#countdown-display {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 1em;
+    display: flex;
+}
+
+#countdown-unit {
+    .small-shadow();
+    .txt-center();
+    .upper();
+    border-radius: 0.3em;
+    padding: 0.5em;
+    display: flex;
+    background: rgba(255,255,255,0.16);
+    flex-direction: column;
+}
+
+.days, .hours, .mins, .seconds {
+    font-size: 2em;
+}

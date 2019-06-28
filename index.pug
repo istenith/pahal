@@ -15,11 +15,22 @@ block content
 			{"title":"FAQ","icon":"fas fa-question-circle","link":"/pages/faq.html"},
 			{"title":"FEEDBACK","icon":"fas fa-comments","link":"/pages/feedback.html"},
 			{"title":"ABOUT US","icon":"fas fa-user-friends","link":"https://istenith.github.io/"}
-		]
-		
+		];
+		var timer = ["days","hours","mins","seconds"];
+	br
+	.card 
+		#countdown-display-heading
+		h2 Admissions starting in
+		#countdown-display 
+			each unit in timer
+				#countdown-unit
+					div(class=unit)
+					p= unit
+
 	.link-flex
 		each button in buttons
 			a(class="link-square",href=button.link)
 				.title= button.title
 				i(class=button.icon)
 				
+	script(type="text/javascript" src="../scripts/index.js")
