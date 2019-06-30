@@ -1,4 +1,16 @@
 @import (reference) 'library.less';
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: all 0.25s ease-in-out;
+}
+a {
+	text-decoration: none;
+	color: @iste-blue;
+}
 :root {
 	--pri-text: #fff;
 	--sec-text: darken(#fff,30%);
@@ -13,7 +25,7 @@
 
 [data-theme="light"] {
 	--pri-text: #333;
-	--sec-text: lighten(#333,70%);
+	--sec-text: lighten(#333,30%);
 	--ter-text: lighten(#333, 50%);
 
 	--nav-bg: #fff;
@@ -22,44 +34,50 @@
 
 	--white-grey: grey;
 }
-input.expand {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 4.2em;
-	width: 3.6em;
-	opacity: 0;
-	z-index: 3;
-}
-div.expand {
-	position: absolute;
-	top: 1.5em;
-	right: 1.5em;
-	pointer-events: none;
-}
-.title {
-	.fw6();
-	padding-left: 0.5em;
-	padding-right: 2.4em;
-	transition: none;
-	color: var( --pri-text );
-}
-.desc {
-	padding-top: 0;
-	max-height: 0px;
-	overflow: hidden;
-	width: 100%;
-}
-input.expand:checked {
-	&~.expand {
-		transform: rotate(180deg);
+.expand {
+	.row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
-	&~.desc {
+	input {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 3em;
+		opacity: 0;
+		z-index: 3;
+	}
+	.arrow {
+		pointer-events: none;
+	}
+	.title {
+		.fw6();
+		transition: none;
+		padding-right: 1em;
+		display: flex;
+		align-items: center;
+	}
+	.desc {
 		.pri-text();
-		max-height: 150px;
-		padding-top: 0.5em;
-		margin-top: 0.5em;
-		border-top: 2px dashed var( --ter-text );
+		padding-top: 0;
+		margin-top: 0;
+		max-height: 0px;
+		overflow: hidden;
+		width: 100%;
+	}
+	input:checked {
+		&~.row .arrow {
+			transform: rotate(180deg);
+			transform-origin: 50% 39%;
+		}
+		&~.row .desc {
+			max-height: 150px;
+			padding-top: 0.5em;
+			margin-top: 0.5em;
+			border-top: 2px dashed var( --ter-text );
+		}
 	}
 }
 .section-title,

@@ -8,7 +8,8 @@ if (completedTasks != '' && completedTasks != null) {
   completedTasks = [];
 }
 
-var todoCards = document.getElementById('todo').getElementsByClassName('card');
+var todoCards =
+    document.getElementById('todo').getElementsByClassName('expand');
 
 for (var i = 0; i < completedTasks.length; ++i) {
   todoCards[completedTasks[i]].classList.add('completed');

@@ -11,17 +11,31 @@ block content
 		-
 			var faqs = [
 				{
-					"ques":"Are all documents necessary at the time of admission",
-					"ans" :"..."
-				/*	"No, <b>only id proofs are required</b> (ID, JoSAA letter, are must), other documents can be submitted till 15<sup>th</sup> September, 2019.",*/
+					'ques':'Are all documents necessary at the time of admission',
+					'ans' :'Not necessarily, documents like JoSAA letter, ID proof are must. Other missing document can be declared and submited after wards. For more info see <a href="/pages/docreq.html">documnets required</a>.'
+				},
+				{
+					'ques':'When will teaching begin',
+					'ans' :'Teaching will begin soon, within 1-2 days after end of 7<sup>th</sup> round seat acceptance (i.e. 23<sup>rd</sup> july, 2019).'
+				},
+				{
+					'ques':'Can I get my medical certificate made at NIT Hamirpur',
+					'ans' :'Yes, it\'s fairly easy, NIT\'s dispensary is near auditorium where admission process will take place.'
+				},
+				{
+					'ques':'Can I get my medical certificate made at NIT Hamirpur',
+					'ans' :'Yes there is facility of notary arranged for convenence'
+				},
+				{
+					'ques':'Can I get my medical certificate made at NIT Hamirpur',
+					'ans' :'Yes there is facility of notary arranged for convenence'
 				},
 			]
 		each faq in faqs
-			.card
+			.card.expand
+				input(type="checkbox")
 				.row
 					.title Q. #{faq.ques}?
+					.arrow &#x23F7;
 				.row
-					if faq.ans
-						input(type="checkbox").expand
-						.expand.icon &#x21af;
-						.desc!= faq.ans
+					.desc!= faq.ans

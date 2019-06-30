@@ -9,7 +9,7 @@ if (completedTasks != '' && completedTasks != null) {
 }
 
 var todoCards =
-    document.getElementById('docreq').getElementsByClassName('card');
+    document.getElementById('docreq').getElementsByClassName('expand');
 
 for (var i = 0; i < completedTasks.length; ++i) {
   todoCards[completedTasks[i]].classList.add('completed');
