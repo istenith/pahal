@@ -1,15 +1,15 @@
 doctype html
 html
 	head
-		link(rel='stylesheet', type='text/css', href='/styles/header.min.css')
-		link(rel="stylesheet" href="/styles/commons.min.css" type="text/css")
+		link(rel='stylesheet', type='text/css', href='styles/header.min.css')
+		link(rel="stylesheet" href="styles/commons.min.css" type="text/css")
 		link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css")
 		block headelms
 	body
 		header
 			.row
 				a#logo(href='https://istenith.me')
-					img(src='/resources/images/logos/pngs/ISTE.png')
+					img(src='resources/images/logos/pngs/ISTE.png')
 					span ISTE
 
 				#menu-btn.fas.fa-bars
@@ -20,15 +20,15 @@ html
 						var options = [
 							{
 								'text':'Home',
-								'link':'/'
+								'link':'index.html'
 							},
 							{
 								'text':'todo',
-								'link':'/pages/todo.html'
+								'link':'todo.html'
 							},
 							{
 								'text':'Docs Required',
-								'link':'/pages/docreq.html'
+								'link':'docreq.html'
 							},
 							{
 								'text':'Map',
@@ -36,11 +36,11 @@ html
 							},
 							{
 								'text':'FAQ',
-								'link':'/pages/faq.html'
+								'link':'faq.html'
 							},
 							{
 								'text':'Feedback',
-								'link':'/pages/feedback.html'
+								'link':'feedback.html'
 							},
 							{
 								'text':'About Us',
@@ -67,4 +67,4 @@ html
 		#filler
 
 		block content
-		script(type='text/javascript' src='/scripts/header.js').
+		script(type='text/javascript' src='scripts/header.js').

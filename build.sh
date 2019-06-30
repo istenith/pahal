@@ -9,8 +9,7 @@ mkdir -p builds/resources
 cp scripts/* builds/scripts/ --update
 cp -r resources/* builds/resources/ --update
 
-pug -w ./index.pug --basedir ./ --out builds/ &
-pug -w pug/pages --basedir ./ --out builds/pages &
+pug -w pug/pages --basedir ./ --out builds/ &
 less-watch-compiler &
 live-server ./builds &
 

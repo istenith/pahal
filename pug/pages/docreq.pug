@@ -1,6 +1,6 @@
 extends /pug/bases/header.pug
 block headelms
-	link(rel="stylesheet", type="text/css", href="/styles/todo_doc.min.css")
+	link(rel="stylesheet", type="text/css", href="styles/todo_doc.min.css")
 
 block content
 	section#docreq
@@ -20,7 +20,7 @@ block content
 			var docs = [
 				{
 					'title':'Provisional JoSAA Seat Allotment Letter 2019',
-					'desc':'Take forms, fill them and arrange in documents in order'
+					'desc':'Issued by JoSAA on seat acceptance.'
 				},
 				{
 					'title':'Passport size photographs',
@@ -81,4 +81,4 @@ block content
 					.arrow &#x23F7;
 				.row
 					.desc= doc.desc
-	script(type="text/javascript" src="../scripts/docreq.js")
+	script(type="text/javascript" src="scripts/docreq.js")
