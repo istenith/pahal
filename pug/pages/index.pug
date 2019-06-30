@@ -10,16 +10,16 @@ block content
 			p An initiative by ISTE, NIT Hamirpur
 	-
 		var buttons = [
-			{"title":"TODO","icon":"fas fa-list","link":"todo.html"},
-			{"title":"MAP","icon":"fas fa-map-marked","link":"#"},
-			{"title":"FAQ","icon":"fas fa-question-circle","link":"faq.html"},
-			{"title":"FEEDBACK","icon":"fas fa-comments","link":"feedback.html"},
-			{"title":"ABOUT US","icon":"fas fa-user-friends","link":"https://istenith.github.io/"}
+			{"title":"todo",    "icon":"fas fa-list-ul",         "link":"todo.html"},
+			{"title":"docs",    "icon":"fas fa-file-alt",        "link":"docreq.html"},
+			{"title":"map",     "icon":"fas fa-map-marked",      "link":"#"},
+			{"title":"faq",     "icon":"fas fa-question-circle", "link":"faq.html"},
+			{"title":"feedback","icon":"fas fa-comments",        "link":"feedback.html"},
+			{"title":"about us","icon":"fas fa-user-friends",    "link":"https://istenith.github.io/"}
 		];
 		var timer = ["days","hours","mins","seconds"];
 	br
 	.card 
-		#countdown-display-heading
 		h2 Admissions starting in
 		#countdown-display 
 			each unit in timer
