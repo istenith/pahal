@@ -55,21 +55,6 @@ header {
 			color: @iste-blue;
 		}
 	}
-	.bottom {
-		display: flex;
-		color: var(--white-grey);
-		&, b{
-			justify-content: space-between;
-			align-items: center;
-		}
-		b {
-			display: inline-flex;
-			span {
-				font-size: 1.5em;
-				margin-right: 0.25em;
-			}
-		}
-	}
 	.switch {
 		position: relative;
 		display: inline-block;
@@ -150,8 +135,24 @@ header {
 			color: var(--white-grey);
 		}
 		li a {
-			border-bottom: 2px  solid var( --white-grey );
 			display: block;
+			border-bottom: 2px  solid var( --white-grey );
+		}
+		.bottom {
+			display: flex;
+			color: var(--white-grey);
+			padding-right: 0;
+			&, b{
+				justify-content: space-between;
+				align-items: center;
+			}
+			b {
+				display: inline-flex;
+				span {
+					font-size: 1.5em;
+					margin-right: 0.25em;
+				}
+			}
 		}
 	}
 	#menu.off-screen {
