@@ -51,6 +51,10 @@ a {
 	}
 	.arrow {
 		pointer-events: none;
+		@arrow-height: 5px;
+		border-top:   @arrow-height solid var(--pri-text);
+		border-left:  @arrow-height solid transparent;
+		border-right: @arrow-height solid transparent;
 	}
 	.title {
 		.fw6();

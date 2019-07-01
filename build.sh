@@ -1,7 +1,6 @@
 trap "kill 0" EXIT
 
 mkdir -p builds
-mkdir -p builds/pages
 mkdir -p builds/styles
 mkdir -p builds/scripts
 mkdir -p builds/resources
