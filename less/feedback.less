@@ -12,20 +12,34 @@ form {
 		padding: 0.5em 1em;
 		margin: 0.5em 0;
 		width: 100%;
+		&:focus {
+			outline: none;
+		}
 	}
+	.bottom-border(@color) {
+		border-bottom: 3px solid @color;
+	}
+
 	input:not(#send), textarea {
+		.fw6();
 		.card-bg();
 		.pri-text();
-		.fw6();
-		caret-color: @iste-blue;
 		border: none;
-		border-bottom: 2px solid @iste-blue;
-	}
-	input:invalid {
-		border: 2px solid red;
+		.bottom-border(@iste-blue);
+		caret-color: @iste-blue;
+		&:focus {
+			.bottom-border(var(--pri-text));
+		}
+		&:invalid {
+			box-shadow: none;
+			.bottom-border(#f44336);
+		}
 	}
 	input {
 		.txt-center();
+	}
+	textarea {
+		resize: none;
 	}
 }
 #send {
