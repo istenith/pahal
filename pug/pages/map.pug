@@ -1,0 +1,53 @@
+extends /pug/bases/header.pug
+
+block headelms
+	link(rel="stylesheet", type="text/css", href="styles/map.min.css")
+
+block content
+	.map
+		img(src="resources/images/map_exp.svg", alt="NITH MAP")
+	#guide-button
+		h2 Guide
+	-
+		var legend = [
+			{ //1
+				"title":"Main Gate",
+				"desc":"This is the main gate of campus: Gate 1"
+			},
+			{ //2
+				"title":"Nescafe",
+				"desc":"After long hours travelling, refresh yourselves here at Nescafe"
+			},
+			{//3
+				"title":"Audiotirum",
+				"desc":"All the processes of admission takes place here. Yellow line on map guides you from the main gate to the auditorium"				
+			},
+			{//4
+				"title":"ATMs",
+				"desc":"There are 2 ATMs here one near the shop and the other beside the bank entrance. The bank is opposite to shops."
+			},
+			{//5
+				"title":"Print Shop",
+				"desc":"Get all the necessary prints here. Net facility is also provided so you can download any documents if required."
+			},
+			{//6
+				"title":"Kailash Boys Hostel",
+				"desc":"The mess provides food here. Also there is 4H Food Court near the hostel. It is the first year hostel for boys"
+			}
+		]
+	#guide-desc.off-screen
+		each place, index in legend
+			.card.expand
+				input(type="checkbox")
+				.row
+					.title 
+						.number #{index+1}
+						.text #{place.title}
+					.arrow
+				.row
+					if place.desc
+						.desc= place.desc
+		#close-guide-button
+			h1 ×
+
+	script(type='text/javascript' src='scripts/map.js').
