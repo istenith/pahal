@@ -10,6 +10,6 @@ cp -r resources/* builds/resources/ --update
 
 pug -w pug/pages --basedir ./ --out builds/ &
 less-watch-compiler &
-live-server ./builds &
+live-server --port=3330 ./builds &
 
 wait

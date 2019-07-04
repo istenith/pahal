@@ -1,53 +1,78 @@
 extends /pug/bases/header.pug
 
 block headelms
-	link(rel="stylesheet", type="text/css", href="styles/map.min.css")
+	link(rel='stylesheet', type='text/css', href='styles/map.min.css')
 
 block content
 	.map
-		img(src="resources/images/map_exp.svg", alt="NITH MAP")
-	#guide-button
-		h2 Guide
+		img(src='resources/images/map_exp.svg', alt='NITH MAP')
+	#guide-button Guide
 	-
-		var legend = [
+		var points = [
 			{ //1
-				"title":"Main Gate",
-				"desc":"This is the main gate of campus: Gate 1"
+				'title':'Main Gate & Shops',
+				'desc':'This is the main gate of campus: Gate 1, shops like general, groceries, stationaries are available near Ambika Girls Hostel.'
 			},
 			{ //2
-				"title":"Nescafe",
-				"desc":"After long hours travelling, refresh yourselves here at Nescafe"
+				'title':'Nescafe',
+				'desc':'After long hours travelling, refresh yourselves here at Nescafe'
 			},
-			{//3
-				"title":"Audiotirum",
-				"desc":"All the processes of admission takes place here. Yellow line on map guides you from the main gate to the auditorium"				
+			{ //3
+				'title':'Amul Coffee Shop',
+				'desc':'A place to grab some snacks.'				
 			},
-			{//4
-				"title":"ATMs",
-				"desc":"There are 2 ATMs here one near the shop and the other beside the bank entrance. The bank is opposite to shops."
+			{ //4
+				'title':'Bank, ATMs & Stationary',
+				'desc':'There are 2 ATMs here one near the shop and the other beside the bank entrance. The bank is opposite to shops.'
 			},
-			{//5
-				"title":"Print Shop",
-				"desc":"Get all the necessary prints here. Net facility is also provided so you can download any documents if required."
+			{ //5
+				'title':'Cyber cafe & laundry',
+				'desc':'Get all the necessary prints here. Follow trail behind stationary shop.'
 			},
-			{//6
-				"title":"Kailash Boys Hostel",
-				"desc":"The mess provides food here. Also there is 4H Food Court near the hostel. It is the first year hostel for boys"
+			{ //6
+				'title':'4H Food Court',
+				'desc':'Near KBH. Unreachable from inside of hostel.'
 			}
-		]
+		];
+		
+		var roads = [
+			{ 
+				'color':'e5c163',
+				'func':'Road leading to auditorium<br>Most of processes regarding admissions'
+			},
+			{ 
+				'color':'fff',
+				'func':'Support roads<br>Roads leading to useful services.',
+				'class': 'enclose'
+			},
+			{ 
+				'color':'878787',
+				'func':'Refrence roads<br>Help to navigate.'
+			},
+			{ 
+				'color':'fa7f70',
+				'func':'Foot path<br>Non-motorable roads/steps.'
+			},
+		];
 	#guide-desc.off-screen
-		each place, index in legend
+		.card
+			each road in roads
+				.area
+					.road(style='background:#'+road.color+';' class=road.class)
+					.func!= road.func
+
+		each point, index in points
 			.card.expand
-				input(type="checkbox")
+				input(type='checkbox')
 				.row
 					.title 
 						.number #{index+1}
-						.text #{place.title}
+						.text #{point.title}
 					.arrow
 				.row
-					if place.desc
-						.desc= place.desc
+					if point.desc
+						.desc= point.desc
 		#close-guide-button
-			h1 ×
+			div ×
 
 	script(type='text/javascript' src='scripts/map.js').
