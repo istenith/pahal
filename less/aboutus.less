@@ -1,0 +1,30 @@
+@import (reference) 'library.less';
+
+.card {
+    margin-bottom: 1em;
+    letter-spacing: 1px;
+    text-align: justify;
+    * {
+        margin-bottom: 1em;
+    }
+    a {
+        .circle-radius;
+        .pri-text();
+        border-left: 1px solid grey;
+        padding: 0.7em;
+        text-decoration: none;
+    }
+    li {
+        .pri-text();
+        .circle-radius;
+        list-style-type: none;
+        border-left: 1px solid grey;
+        padding: 0.7em;
+    }
+}
+
+.logo {
+    width: fit-content;
+    display: block;
+    margin: 2em auto;
+}
