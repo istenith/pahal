@@ -16,6 +16,7 @@ img {
     .circle-radius();
     .pointer();
 	.fw6();
+	z-index: 5;
     position: fixed;
     right: 1em;
     bottom: 1em;
@@ -26,6 +27,7 @@ img {
     .pri-text();
 	border-top: 0.6em solid var( --pri-bg );
 	box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.19), 0 -6px 6px rgba(0, 0, 0, 0.23);
+	z-index: 6;
     position: fixed;
     overflow: scroll;
     bottom: 0;
@@ -38,14 +40,13 @@ img {
         .card-bg();
 		.txt-center();
 		@width: 1.5em;
-		@half-width: @width/2;
 		width: @width;
 		height: @width;
-        z-index: 9;
+        z-index: 7;
         position: fixed;
 		left: 50%;
-		top: calc(50% - @half-width);
-		transform: translateX(-50%);
+		top: 50%;
+		transform: translate(-50%, -50%);
 		font-size: 2em;
 		font-family: sans-serif;
 		div {
