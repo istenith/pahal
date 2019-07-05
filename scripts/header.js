@@ -1,15 +1,8 @@
 document.getElementById('filler').style.height =
-    (document.getElementsByTagName('header')[0].offsetHeight + 6) + 'px';
+    document.getElementsByTagName('header')[0].offsetHeight + 'px';
 
-var menuBtn = document.getElementById('menu-btn');
-menuBtn.onclick = function(eve) {
-  document.getElementById('menu').classList.remove('off-screen');
-};
-
-var closeMenuBtn = document.getElementById('close-menu');
-closeMenuBtn.onclick = function(eve) {
-  document.getElementById('menu').classList.add('off-screen');
-};
+removeClassToOnclick('off-screen', '#menu', '#menu-btn');
+addClassToOnclick('off-screen', '#menu', '#close-menu');
 
 /* Color mode handling*/
 var colorModeSwitch = document.getElementById('color-mode-switch');
@@ -37,13 +30,11 @@ function implementColorMode() {
 }
 
 function updateColorModeSwitch() {
+  var colorModeSwitchCheckbox =
+      colorModeSwitch.getElementsByTagName('input')[0];
   if (mode == 'light') {
-    if (colorModeSwitch.getElementsByTagName('input')[0].checked) {
-      colorModeSwitch.click();
-    }
+    colorModeSwitchCheckbox.checked = false;
   } else if (mode == 'dark') {
-    if (colorModeSwitch.getElementsByTagName('input')[0].checked == false) {
-      colorModeSwitch.click();
-    }
+    colorModeSwitchCheckbox.checked = true;
   }
 }
