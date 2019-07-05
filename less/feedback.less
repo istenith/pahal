@@ -29,17 +29,29 @@ form {
 		caret-color: @iste-blue;
 		&:focus {
 			.bottom-border(var(--pri-text));
+			&:invalid {
+				.bottom-border(#f44336);
+			}
+			&:required:valid {
+				.bottom-border(#5cb85c);
+			}
 		}
 		&:invalid {
 			box-shadow: none;
-			.bottom-border(#f44336);
 		}
 	}
-	input {
+	&>input{
 		.txt-center();
 	}
 	textarea {
 		resize: none;
+	}
+	.radio {
+		* {
+			width: unset;
+			padding: 0.5em;
+			.fw6();
+		}
 	}
 }
 #send {

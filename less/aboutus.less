@@ -4,22 +4,35 @@
     margin-bottom: 1em;
     letter-spacing: 1px;
     text-align: justify;
-    * {
-        margin-bottom: 1em;
-    }
-    a {
-        .circle-radius;
-        .pri-text();
-        border-left: 1px solid grey;
-        padding: 0.7em;
-        text-decoration: none;
-    }
-    li {
-        .pri-text();
-        .circle-radius;
-        list-style-type: none;
-        border-left: 1px solid grey;
-        padding: 0.7em;
+	h1, h2 {
+		padding-bottom: 0.5em;
+		.txt-center();
+	}
+	a {
+		color: @iste-blue;
+	}
+    .tools {
+		a {
+			.circle-radius;
+			.pri-text();
+			.txt-center();
+			display: block;
+			padding-top: 3em;
+			text-decoration: none;
+
+			.image {
+				width: 100px;
+				margin: 0 auto;
+				img {
+					max-width: 100%;
+				}
+			}
+			.name {
+				.fw7();
+				font-size: 1.2em;
+				padding: 0.7em;
+			}
+		}
     }
 }
 

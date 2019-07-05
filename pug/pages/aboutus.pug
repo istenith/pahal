@@ -1,20 +1,68 @@
 extends /pug/bases/header.pug
 
 block headelms
+	title About Us - Pahal
 	link(rel='stylesheet', type='text/css', href='styles/aboutus.min.css')
 
 block content
 	.section-title About Us
-	img(src="resources/images/logos/svgs/ISTE.svg", alt="",class="logo")
 	.card 
+		img(src="resources/images/logos/svgs/ISTE.svg", alt="",class="logo")
+		h1 ISTE
 		p The Indian Society for Technical Education (ISTE) is a national, professional, non-profit organisation for the Technical Education System in our country. ISTE has the motto of the promoting Career development of Teachers and personality development of Students. The major objective of ISTE is to provide quality training programmes for teachers and administrators of technical Institutions to update their knowledge and skills in their fields of activity and to assist the production and development of high quality professional engineers. 
 		a(href="https://istenith.github.io") Click here to go to our official website!
 	.card 
-		h1 Tools Used
-		p The Pahal website has been developed using the following tools
-		ul
-			li Pug.js Javascript library
-			li 'Less' CSS Precompiler
-			li 'npm' to manage node modules
-			li INKSCAPE SE ISTE KA LOGO BANAYA HAI ABHAY NEE!!! 
-			li Github to manage workflow and version control
+		h2 Our Arsenal
+		p!= 'The Pahal website is<a href="https://opensource.org" target="_blank"> open source </a>and has been made possible by these great tools. Thanks to their developers and wonderful communities!! Click to learn more about them.'
+		-
+			var tools = [
+				{
+					'logo': 'resources/images/logos/svgs/pug.png',
+					'name': 'pug.js',
+					'func': 'HTML preprocessor',
+					'link': 'https://pugjs.org'
+				},
+				{
+					'logo': 'resources/images/logos/svgs/less.svg',
+					'name': 'less',
+					'func': 'CSS preprocessor',
+					'link': 'http://lesscss.org'
+				},
+				{
+					'logo': 'resources/images/logos/svgs/js.svg',
+					'name': 'JavaScript',
+					'func': 'Makes pages alive',
+					'link': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
+				},
+				{
+					'logo': 'resources/images/logos/svgs/npm.svg',
+					'name': 'npm',
+					'func': 'nodejs tools',
+					'link': 'https://www.npmjs.com'
+				},
+				{
+					'logo': 'resources/images/logos/svgs/inkscape.svg',
+					'name': 'Inkscape',
+					'func': 'Graphics: Map and logos',
+					'link': 'https://inkscape.org'
+				},
+				{
+					'logo': 'resources/images/logos/svgs/git.svg',
+					'name': 'git',
+					'func': 'Source code management',
+					'link': 'https://git-scm.com'
+				},
+				{
+					'logo': 'resources/images/logos/svgs/github.svg',
+					'name': 'GitHub',
+					'func': 'Hosting and collaboration',
+					'link': 'https://github.com'
+				},
+			]
+		.tools
+			each tool in tools
+				a(href=tool.link)
+					.image
+						img(src=tool.logo)
+					.name= tool.name
+					.func!= tool.func

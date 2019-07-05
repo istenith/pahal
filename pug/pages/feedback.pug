@@ -1,13 +1,21 @@
 extends /pug/bases/header.pug
 block headelms
+	title Feedback - Pahal
 	link(rel='stylesheet' href='styles/feedback.min.css')
 
 block content
 	.section-title feedback
 	.card
 		form(action='https://formspree.io/teamiste@gmail.com', method='POST')
-			input(type='text', name='NAME :', placeholder='Your good name...')
-			//input(type='number', name='ROLL NO. :', placeholder='Roll number')
-			input(type='email', name='E-mail address:', placeholder='Your email address...', pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*")
+			input(type='text', name='NAME :', placeholder='Your good name')
+			input(type='number', name='ROLL NO. :', placeholder='Roll number(optional)')
+			input(type='email', name='E-mail address:', placeholder='Your email address', pattern="[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*")
+			.radio
+				input(type='radio' id='stud' name='USER:' value='Student' checked)
+				label(for='stud') Student
+			.radio
+				input(type='radio' id='parn' name='USER:' value='Parent')
+				label(for='parn') Parent
+
 			textarea(name='feedback', placeholder='Your feeback...', rows='5', required)
 			input#send(type='submit', value='SEND')

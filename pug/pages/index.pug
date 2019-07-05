@@ -1,6 +1,7 @@
 extends /pug/bases/header.pug
 
 block headelms
+	title Pahal - ISTE NIT Hamirpur
 	link(rel="stylesheet", type="text/css", href="styles/index.min.css")
 
 block content
@@ -29,10 +30,15 @@ block content
 					div(class=unit)
 					p= unit
 
-	div(class="card",id="summary") 
+	.card.justify
 		h2 What is Pahal?
-		br
-		p The Indian Society for Technical Education (ISTE) is a national, professional, non-profit organisation for the Technical Education System in our country. Team ISTE here at NIT Hamirpur is taking an initiative ‘PAHAL’ to help freshers in the process admission by setting up a help-desk.
+		.image
+			img(src='resources/images/pahal_banner.jpeg')
+		p!= 'Team ISTE here at NIT Hamirpur is taking an initiative <b>PAHAL</b> to help freshers in the process admission by setting up a help-desk, in-person guidance, and in every way possible. &#128513;'
+
+	.card.justify
+		h2 This website
+		p!= 'This website is to provide necessary tools(checklists, navigation and map) and information(documents, faqs).<br><br>This website is <b>mobile-oriented</b> to minimise load on users\' devices. Dark mode is recommended for power savings but light mode is also available and fully fuctional.'
 
 	.link-flex
 		each button in buttons
@@ -40,4 +46,13 @@ block content
 				.title= button.title
 				i(class=button.icon)
 				
-	// script(type="text/javascript" src="scripts/index.js")
+	script(type="text/javascript").
+		if ('serviceWorker' in navigator) {
+			console.log("Will the service worker register?");
+			navigator.serviceWorker.register('service-worker.js')
+				.then(function(reg){
+					console.log("Yes, it did.");
+				}).catch(function(err) {
+					console.log("No it didn't. This happened: ", err)
+				});
+		}
