@@ -23,10 +23,12 @@ img {
     width: 100%;
     z-index: -1;
 }
-.card 
+.card.justify 
 {
+	*:not(:last-child) {
+		padding-bottom: 1rem;
+	}
 	.image {
-		padding: 1em 0;
 		text-align: center;
 	}
 	img {
