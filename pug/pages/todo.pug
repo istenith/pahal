@@ -1,6 +1,6 @@
 extends /pug/bases/header.pug
 block headelms
-	title Todo - Pahal
+	title Todo - Pahal ISTE NIT Hamirpur admissions
 	link(rel="stylesheet", type="text/css", href="styles/todo_doc.min.css")
 
 block content
@@ -13,10 +13,10 @@ block content
 			| Click the arrow to get more information about the task.
 			br
 			br
-			| We will remeber your progress even if you exit.
+			| We will remember your progress even if you exit.
 			br
 			br
-			| At any time if you get stuck, ask ISTE members around you we will be more than happy to help as soon as we're free
+			| At any time if you get stuck, ask ISTE members around you, we will be more than happy to help as soon as we're free.
 			
 		-
 			var todos = [
@@ -32,7 +32,7 @@ block content
 				/* time dependent content */
 				{
 					'title':'Get yourself enrolled',
-					'desc' :'This process would take place in confrence room(above auditorium). You will get your Roll no. like 19XYYY(see advisory).'
+					'desc' :'This process would take place in conference room(above auditorium). You will get your Roll no. like 19BSSS(see faq).'
 				},
 				/* requires attention */
 				{
@@ -61,5 +61,5 @@ block content
 					.arrow
 				.row
 					if todo.desc
-						.desc= todo.desc
-	script(type="text/javascript" src="scripts/todo.js")
+						.desc!= todo.desc
+	script(src="scripts/todo.js")

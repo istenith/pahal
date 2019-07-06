@@ -1,18 +1,18 @@
 doctype html
 html
-	head
+	head(lang='en')
 		meta(name='viewport' content='width=device-width, initial-scale=1.0' )
 		link(rel='stylesheet', type='text/css', href='styles/header.min.css')
 		link(rel="stylesheet" href="styles/commons.min.css" type="text/css")
 		link(rel="stylesheet", type="text/css", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css")
 
 		// Open Graphs
-		meta(property='og:title', content='Pahal - ISTE NIT Hamirpur')
+		meta(property='og:title', content='Pahal - ISTE NIT Hamirpur admissions')
 		meta(property='og:site_name', content='Pahal')
-		meta(property='og:url', content='https://istenith.github.io/pahal')
+		meta(property='og:url', content='https://istenith.com/pahal')
 		meta(property='og:description', content='NIT Hamirpur UG admissions, tools and info: peer operated website')
 		meta(property='og:type', content='website')
-		meta(property='og:image', content='https://istenith.github.io/pahal/pahal_bg_dark.png')
+		meta(property='og:image', content='https://istenith.com/pahal/pahal_bg_dark.png')
 		// /Open Graphs 
 
 		// Favicons
@@ -31,8 +31,8 @@ html
 	body
 		header
 			.row
-				a#logo(href='https://istenith.me')
-					img(src='resources/images/logos/pngs/ISTE.png')
+				a#logo(href='https://istenith.com')
+					img(src='resources/images/logos/ISTE.png' alt='ISTE logo')
 					span ISTE
 
 				#menu-btn.fas.fa-bars
@@ -68,7 +68,7 @@ html
 							{
 								'text':'About Us',
 								'link':'aboutus.html',
-							}
+							},
 						];
 					each option in options
 						li
@@ -86,7 +86,7 @@ html
 				#close-menu &#x00d7;
 
 		#filler
-		script(type='text/javascript' src='scripts/utilities.js').
+		script(src='scripts/utilities.js').
 
 		block content
-		script(type='text/javascript' src='scripts/header.js').
+		script(src='scripts/header.js').

@@ -1,59 +1,59 @@
 extends /pug/bases/header.pug
 
 block headelms
-	title About Us - Pahal
+	title About Us - Pahal ISTE NIT Hamirpur admissions
 	link(rel='stylesheet', type='text/css', href='styles/aboutus.min.css')
 
 block content
 	.section-title About Us
 	.card 
-		img(src="resources/images/logos/svgs/ISTE.svg", alt="",class="logo")
+		img(src="resources/images/logos/ISTE.svg", alt="ISTE logo",class="logo")
 		h1 ISTE
 		p The Indian Society for Technical Education (ISTE) is a national, professional, non-profit organisation for the Technical Education System in our country. ISTE has the motto of the promoting Career development of Teachers and personality development of Students. The major objective of ISTE is to provide quality training programmes for teachers and administrators of technical Institutions to update their knowledge and skills in their fields of activity and to assist the production and development of high quality professional engineers. 
-		a(href="https://istenith.github.io") Click here to go to our official website!
+		a(href="https://istenith.com") Click here to go to our official website!
 	.card 
 		h2 Our Arsenal
 		p!= 'The Pahal website is<a href="https://opensource.org" target="_blank"> open source </a>and has been made possible by these great tools. Thanks to their developers and wonderful communities!! Click to learn more about them.'
 		-
 			var tools = [
 				{
-					'logo': 'resources/images/logos/svgs/pug.png',
+					'logo': 'resources/images/logos/pug.png',
 					'name': 'pug.js',
 					'func': 'HTML preprocessor',
 					'link': 'https://pugjs.org'
 				},
 				{
-					'logo': 'resources/images/logos/svgs/less.svg',
+					'logo': 'resources/images/logos/less.svg',
 					'name': 'less',
 					'func': 'CSS preprocessor',
 					'link': 'http://lesscss.org'
 				},
 				{
-					'logo': 'resources/images/logos/svgs/js.svg',
+					'logo': 'resources/images/logos/js.svg',
 					'name': 'JavaScript',
 					'func': 'Makes pages alive',
 					'link': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript'
 				},
 				{
-					'logo': 'resources/images/logos/svgs/npm.svg',
+					'logo': 'resources/images/logos/npm.svg',
 					'name': 'npm',
-					'func': 'nodejs tools',
+					'func': 'Node.js tools',
 					'link': 'https://www.npmjs.com'
 				},
 				{
-					'logo': 'resources/images/logos/svgs/inkscape.svg',
+					'logo': 'resources/images/logos/inkscape.svg',
 					'name': 'Inkscape',
 					'func': 'Graphics: Map and logos',
 					'link': 'https://inkscape.org'
 				},
 				{
-					'logo': 'resources/images/logos/svgs/git.svg',
+					'logo': 'resources/images/logos/git.svg',
 					'name': 'git',
 					'func': 'Source code management',
 					'link': 'https://git-scm.com'
 				},
 				{
-					'logo': 'resources/images/logos/svgs/github.svg',
+					'logo': 'resources/images/logos/github.svg',
 					'name': 'GitHub',
 					'func': 'Hosting and collaboration',
 					'link': 'https://github.com'
@@ -63,6 +63,6 @@ block content
 			each tool in tools
 				a(href=tool.link)
 					.image
-						img(src=tool.logo)
+						img(src=tool.logo alt=tool.name + ' logo')
 					.name= tool.name
 					.func!= tool.func

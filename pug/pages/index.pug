@@ -1,7 +1,7 @@
 extends /pug/bases/header.pug
 
 block headelms
-	title Pahal - ISTE NIT Hamirpur
+	title Pahal - ISTE NIT Hamirpuri admissions
 	link(rel="stylesheet", type="text/css", href="styles/index.min.css")
 
 block content
@@ -33,12 +33,10 @@ block content
 	.card.justify
 		h2 What is Pahal?
 		.image
-			img(src='resources/images/pahal_banner.jpeg')
-		p!= 'Team ISTE here at NIT Hamirpur is taking an initiative <b>PAHAL</b> to help freshers in the process admission by setting up a help-desk, in-person guidance, and in every way possible. &#128513;'
-
-	.card.justify
-		h2 This website
-		p!= 'This website is to provide necessary tools(checklists, navigation and map) and information(documents, faqs).<br><br>This website is <b>mobile-oriented</b> to minimise load on users\' devices. Dark mode is recommended for power savings but light mode is also available and fully fuctional.'
+			img(src='resources/images/pahal_banner.jpeg' alt='Pahal Poster')
+		p!= 'Team ISTE here at NIT Hamirpur is taking an initiative <b>PAHAL</b> to help freshers in the admission process by setting up a help-desk, in-person guidance, and in every way possible. &#128512;'
+		p!= 'This website is to provide necessary tools and information.'
+		p!= 'This website is <b>mobile-oriented</b> to minimise load on users\' devices. Dark mode is recommended for power savings but light mode is also available and fully fuctional.'
 
 	.link-flex
 		each button in buttons
@@ -46,7 +44,7 @@ block content
 				.title= button.title
 				i(class=button.icon)
 				
-	script(type="text/javascript").
+	script.
 		if ('serviceWorker' in navigator) {
 			console.log("Will the service worker register?");
 			navigator.serviceWorker.register('service-worker.js')
