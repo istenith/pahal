@@ -47,7 +47,7 @@ block content
 		var roads = [
 			{ 
 				'color':'e5c163',
-				'func':'Road leading to auditorium<br>Most of processes regarding admissions'
+				'func':'Roads leading to auditorium<br>concering first and most of processes regarding admissions.'
 			},
 			{ 
 				'color':'fff',
@@ -64,7 +64,9 @@ block content
 			},
 		];
 	#guide-desc.off-screen
-		.card
+		.card This map is nearly 60KB in size. Visual guides used are
+			br
+			br
 			each road in roads
 				.area
 					.road(style='background:#'+road.color+';' class=road.class)
@@ -81,6 +83,9 @@ block content
 				.row
 					if point.desc
 						.desc= point.desc
+		.card To know more about your campus(after admission) download
+			br
+			a(href='resources/files/NITH_detailed_map.png' download) detailed map(5.4MB)
 		#close-guide-button
 			div ×
 
