@@ -1,5 +1,7 @@
- window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
 
-                gtag('config', 'UA-143546017-2');
+gtag('config', 'UA-133299467-2');
