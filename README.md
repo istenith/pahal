@@ -18,7 +18,7 @@ To ease the development and maintainence following technologies will be used:
 ## NODE.JS
 To provide modules helpfull in developement. As the site will be static as of now no node features other than npm will be required.
 ## pug
-Python based indentation way to easily consvert to htmal with same tags
+Python based indentation way to easily convert to html with same tags
 
 ## less
 Object oriented way of writing CSS, gets converted to CSS
