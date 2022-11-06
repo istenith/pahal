@@ -1,12 +1,18 @@
 @import (reference) 'library.less';
 @import 'expand';
 
-.map {
-	background: #2b2b2b;
+img {
+    position: relative; 
+    width: 100%;
 }
 
-img {
-    width: 100%;
+@media screen{
+  @media (min-width:500px){
+    img{
+      left: 25vw;
+      width: 50%;
+    }
+  }
 }
 
 #guide-button {
