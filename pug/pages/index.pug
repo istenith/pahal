@@ -5,6 +5,7 @@ block headelms
 	link(rel="stylesheet", type="text/css", href="styles/index.min.css")
 
 block content
+	a.chatbotgo(href="#chatbot") CHAT
 	section#banner
 		div.shadow
 			h1 PAHAL
@@ -55,3 +56,10 @@ block content
 					console.log("No it didn't. This happened: ", err)
 				});
 		}
+
+		
+	<div class="chatbotdiv">
+		<iframe width="350" height="430" allow="microphone;" id="chatbot" class="chatbot" src="https://console.dialogflow.com/api-client/demo/embedded/f8fa62f5-6632-4f49-9091-c03b8d02997b"></iframe>
+	</div>
+
+	
